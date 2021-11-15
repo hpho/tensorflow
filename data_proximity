@@ -1,0 +1,11 @@
+import pandas as pd
+dir = r''
+data = pd.read_csv(dir)
+from scipy.spatial.distance import pdist
+import itertools
+
+for i in range(int(len(data)/10**4)):
+  dd = pd.DataFrame(itertools.combinations(data_X.index, 2), columns=['i','j'])
+  dd['dist'] = pdist(data_X, 'euclid')
+  if dd[dd['dist'] < threshold]:
+    print()
